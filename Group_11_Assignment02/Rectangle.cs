@@ -58,8 +58,8 @@ namespace Group_11_Assignment02
         public int GetPerimeter() 
         { 
 
-            return 2 * (recLength +  recWidth);  
- }
+            return 2 * (recLength +  recWidth);    
+        }
 
         public int GetArea()
         {
