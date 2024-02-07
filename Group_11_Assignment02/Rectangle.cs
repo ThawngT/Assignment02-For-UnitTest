@@ -8,6 +8,7 @@ namespace Group_11_Assignment02
 {
     public class Rectangle
     {
+        // this is the change to test git
         private int recLength;
         private int recWidth;
 
