@@ -10,7 +10,7 @@ namespace Group_11_Assignment02
     {
 
         // this is the change to test git
-        private int recLength;
+        public int recLength;
         private int recWidth;
 
         public Rectangle()
@@ -39,31 +39,41 @@ namespace Group_11_Assignment02
 
         public void SetLength(int newLength)
         {
-            //if(newLength >= recLength)
-            //{
-            //    recLength = newLength;
-            //}
-            //else
-            //{
-            //    recLength = recLength;
-            //}
-            recLength = newLength;
+            if (newLength >=0  && newLength<=2300)
+            {
+                recLength = newLength;
+            }
+            else
+            {
+                recLength = 0;
+            }
+           
         }
 
         public void SetWidth(int newWidth)
         {
-            recWidth = newWidth;
+            if (newWidth >=0 && newWidth<=2300)
+            {
+                recWidth = newWidth;
+            }
+            else
+            {
+                recWidth = 0;
+            }
+            
+           
 
         }
 
         public int GetPerimeter() 
-        { 
+        {
 
-            return 2 * (recLength +  recWidth);    
+            return 2*( recLength + recWidth );
         }
 
         public int GetArea()
         {
+
             return recLength * recWidth;
         }
 

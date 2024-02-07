@@ -26,6 +26,8 @@ namespace Group_11_Assignment02
             Console.WriteLine($"Update Width: {rect.GetWidth()}");
             Console.WriteLine($"Update A Perimeter: {rect.GetPerimeter()}");
             Console.WriteLine($"Update An Area: {rect.GetArea()}");
+
+            Console.ReadLine();
         }
     }
 }
