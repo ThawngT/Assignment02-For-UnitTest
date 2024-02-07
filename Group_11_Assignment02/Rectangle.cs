@@ -28,6 +28,7 @@ namespace Group_11_Assignment02
 
         public int GetLength() 
         { 
+            
             return recLength;
         }
 
