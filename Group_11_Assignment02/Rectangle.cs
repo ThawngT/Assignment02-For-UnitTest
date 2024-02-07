@@ -8,6 +8,8 @@ namespace Group_11_Assignment02
 {
     public class Rectangle
     {
+
+        // this is the change to test git
         private int recLength;
         private int recWidth;
 
@@ -15,6 +17,7 @@ namespace Group_11_Assignment02
         { 
             recLength = 0;
             recWidth = 0;
+            //this is the push test
         }
 
         public Rectangle(int initLength, int initWidth)
@@ -54,9 +57,9 @@ namespace Group_11_Assignment02
 
         public int GetPerimeter() 
         { 
+
             return 2 * (recLength +  recWidth);  
-    
-        }
+ }
 
         public int GetArea()
         {
