@@ -14,9 +14,9 @@ namespace Assignment02.Tests
     public class RectangleTest
     {
         [Test]
-        //test for the get length 
-        //  the length should be zero for the default constructed newly recangle
-        public void GetLength_newRectangleWithDefaultConstructor_0()
+        //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   get length  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+        //  the length should be zero for the default rectangle
+        public void GetLength_DefaultLength_0()
         {
             //Arrange
             Rectangle rectangle1 = new Rectangle();
@@ -28,8 +28,39 @@ namespace Assignment02.Tests
 
         }
         [Test]
-        //test for the set length 
+        // length should be 5 if set to 5
+        public void GetLength_UseTheConstructorToGetLength5_5()
+        {
+            //Arrange
+            Rectangle rectangle1 = new Rectangle(5,2);
+            //act
+            int length = rectangle1.GetLength();
+            //assert
+            Assert.That(5, Is.EqualTo(length));
+
+
+        }
+
+
+        [Test]
+        // negative value of length should give 0
+        public void GetLength_putNegativeValueInConstructor_0()
+        {
+            //Arrange
+            Rectangle rectangle1 = new Rectangle(-5, 2);
+            //act
+            int length = rectangle1.GetLength();
+            //assert
+            Assert.That(0, Is.EqualTo(length));
+
+
+        }
+
+
+
+        //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@    set length   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
         //  the length should be exact as expected
+        [Test]
         public void SetLength_lengthIs05_5()
         {
             // Arrange
@@ -44,9 +75,138 @@ namespace Assignment02.Tests
 
 
         }
+        // the length should not be set more than 2300 
         [Test]
+        public void SetLength_SetLengthTo2301_0()
+        {
+            // Arrange
+            Rectangle rectangle = new Rectangle();
+
+            // Act
+            rectangle.SetLength(2301);
+            int length = rectangle.GetLength();
+
+            // Assert
+            Assert.That(0, Is.EqualTo(length));
+
+
+        }
+        // the length should not be set to negative number
+        [Test]
+        public void SetLength_lengthIsNegative1_0()
+        {
+            // Arrange
+            Rectangle rectangle = new Rectangle();
+
+            // Act
+            rectangle.SetLength(-1);
+            int length = rectangle.GetLength();
+
+            // Assert
+            Assert.That(0, Is.EqualTo(length));
+
+
+        }
+
+
+
+        //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   GET WIDTH @@@@@@@@@@@@@@@@@@@
+
+        //  the width should be zero for the default rectangle
+        [Test]
+        public void GetWidth_DefaultLength_0()
+        {
+            //Arrange
+            Rectangle rectangle1 = new Rectangle();
+            //act
+            int Width = rectangle1.GetWidth();
+            //assert
+            Assert.That(0, Is.EqualTo(Width));
+
+
+        }
+
+        // after using the second constructor width should be as provided
+        [Test]
+        public void GetWidth_UseTheConstructorToGetWidth5_5()
+        {
+            //Arrange
+            Rectangle rectangle1 = new Rectangle(2, 5);
+            //act
+            int Width = rectangle1.GetWidth();
+            //assert
+            Assert.That(5, Is.EqualTo(Width));
+
+
+        }
+        [Test]
+        // negative value of width should give 0
+        public void GetWidth_putNegativeValueInConstructor_0()
+        {
+            //Arrange
+            Rectangle rectangle1 = new Rectangle(5, -2);
+            //act
+            int Width = rectangle1.GetWidth();
+            //assert
+            Assert.That(0, Is.EqualTo(Width));
+
+
+        }
+
+        //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   SET Width @@@@@@@@@@@@@@@@@@@@@@
+        //  the width should be exact as expected
+        [Test]
+        public void SetWidth_widthIs05_5()
+        {
+            // Arrange
+            Rectangle rectangle = new Rectangle();
+
+            // Act
+            rectangle.SetWidth(5);
+            int width = rectangle.GetWidth();
+
+            // Assert
+            Assert.That(5, Is.EqualTo(width));
+
+
+        }
+        // the width should not be set more than 2300 
+        [Test]
+        public void SetWidth_SetWidthTo2500_0()
+        {
+            // Arrange
+            Rectangle rectangle = new Rectangle();
+
+            // Act
+            rectangle.SetWidth(2500);
+            int Width = rectangle.GetWidth();
+
+            // Assert
+            Assert.That(0, Is.EqualTo(Width));
+
+
+        }
+        // the width should not be set to negative number
+        [Test]
+        public void SetWidth_WidthIsNegative5_0()
+        {
+            // Arrange
+            Rectangle rectangle = new Rectangle();
+
+            // Act
+            rectangle.SetWidth(-5);
+            int width = rectangle.GetWidth();
+
+            // Assert
+            Assert.That(0, Is.EqualTo(width));
+
+
+        }
+
+
         //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@    PERIMETER @@@@@@@@@@@@@@@@@@@@@@@
         // test1--- THE Default parameter should be zero
+        [Test]
         public void GetPerimeter_DefaultValue_0()
         {
             //Arrange
