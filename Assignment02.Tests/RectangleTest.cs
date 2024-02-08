@@ -13,6 +13,7 @@ namespace Assignment02.Tests
 
     public class RectangleTest
     {
+        //***Length***
         [Test]
         //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   get length  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
         //  the length should be zero for the default rectangle
@@ -250,14 +251,55 @@ namespace Assignment02.Tests
 
         }
 
+        //test#4 Having Maximun value on both length and width
+        [Test]
+        public void PerimeterWith_MaxLengthAndWidth_ReturnValidPerimeter()
+        {
+            //Arrange
+            Rectangle rect = new Rectangle(2300,2300);
+
+            //Act
+            int expectedPerimeter = rect.GetPerimeter();
+            
+            //Assert
+            Assert.That(9200, Is.EqualTo(expectedPerimeter));   
+        }
+
+        // Test#5 Having minumum value on both input
+
+        [Test]
+        public void PerimeterWith_MinValueInput_0_0()
+        {
+            Rectangle rectangle = new Rectangle(0,0);
+            
+
+            //Act
+            int expectedPerimeter = rectangle.GetPerimeter();
+
+            //Assert
+           
+            Assert.That(0, Is.EqualTo(expectedPerimeter));
 
 
+        }
 
+        // Test#6 Having Width value 0 and return valid perimeter
+
+        [Test]
+        public void PerimeterWith_ZeroWidthAndReturnValidPerimeter()
+        {
+            //Arrange
+            Rectangle rect = new Rectangle(0, 6);
+
+            //Act
+            int expectedPerimeter = (int)rect.GetPerimeter();
+
+            //Assert
+            Assert.That(12, Is.EqualTo(expectedPerimeter));
+        }
 
         //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  AREA  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
         //Test1,Area,checkTheCorrectValue
-
-
 
         [Test]
         public void GetArea_putlenght2Bredth4_8()
@@ -271,7 +313,7 @@ namespace Assignment02.Tests
             // Assert
             Assert.That(8, Is.EqualTo(area));
         }
-        // test2: area should be 0 if any of the one vlaue is more than 2300
+        // test2: area should be 0 if any of the one value is more than 2300
         [Test]
         public void GetArea_PutWidthMoreThanMaximumValue_0()
         {
@@ -297,6 +339,38 @@ namespace Assignment02.Tests
 
             // Assert
             Assert.That(0, Is.EqualTo(area));
+        }
+
+        //test#4 Having Maximun value on both length and width
+        [Test]
+        public void AreaWith_MaxLengthAndWidth_ReturnValidArea()
+        {
+            //Arrange
+            Rectangle rect = new Rectangle(2300, 2300);
+
+            //Act
+            int expectedArea = rect.GetArea();
+
+            //Assert
+            Assert.That(5290000, Is.EqualTo(expectedArea));
+        }
+
+        // Test#5 Having minumum value on both input
+
+        [Test]
+        public void AreaWith_MinValueInput_0_0()
+        {
+            Rectangle rectangle = new Rectangle(0, 0);
+
+
+            //Act
+            int expectedArea = rectangle.GetArea();
+
+            //Assert
+
+            Assert.That(0, Is.EqualTo(expectedArea));
+
+
         }
     }
 }
